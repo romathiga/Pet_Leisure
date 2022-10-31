@@ -49,20 +49,23 @@ $img = "upload/".$imagem_DonoPet;
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Pet Leisure - home</title>
+    <link rel="shortcut icon" href="../PET_Leisure/img/favicon.png" >
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/rolagem.css" rel="stylesheet">
-   <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
-    <center> <img src="img/top.png" alt="Imagem do topo." ></center>
-    <style>
+    <center> <img src="img/top.png" alt="Imagem do topo." width="100%"></center>
+    <style type="text/css">
         .table-bg{
             background: rgba(0,0,0,0.3);
             border-radius: 15px 15px 0 0;
         }
+
+      a{
+        color: #00008b;
+      }
+  
     </style>
   </head>
 
@@ -72,7 +75,7 @@ $img = "upload/".$imagem_DonoPet;
 
     <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+    
     <div class="navbar-header">
     <nav type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <img src="./img/menu.png" width="20" height="20" alt=""></a>
@@ -92,32 +95,44 @@ $img = "upload/".$imagem_DonoPet;
           
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 </div>
 
-
-<!-- Imagem de perfil -->
-<?php
-echo "<a href='".$img."'> <img src='".$img."'width='150px'class='rounded-circle' height='125' > "."</a><br>"; 
-?>
+<div class="row">
+    <div class="col-6 col-md-4 "> <br> <!-- COLUNA 1-->
 
 
+</div>
 
- 
-        <div id="cadastro">
 
-            <form action="CadastroDonoPet.php" method="POST"  class="card1" >
+<div class="col-6 col-md-4 "> <!-- COLUNA 2-->
 
-                <div class="card-header">
+        <div id="cadastro" alert-primary style="margin-left:0px;">
 
+            <form action="CadastroDonoPet.php" method="POST"  class="card" >
+
+            <div class="card-header bg-info mb-0 ">
+              
+              <div style="margin-left:30%; margin-top: 5%; margin-bottom: 5%;">
+              
+              <!-- Imagem de perfil -->
+              <?php
+                echo "<a href='".$img."'> <img src='".$img."'width='150'class='rounded-circle' height='150'> "."</a><br>"; 
+              ?>
+              </div><hr>
+
+              <div style="margin-left:30%; margin-top: 0%; margin-bottom: 3%;">
                     <h2>Meu Perfil</h2>
-                </div>
+              </div>
+              
+            </div>
+            <div class="card-body alert-primary">
                 <?php
                     while($user_data = mysqli_fetch_assoc($result)){
                       echo "Editar Perfil: ".
-                      "<a class='btn btn-primary' href='editDonoPet.php?id=$user_data[id_dono_pet]'>
+                      "<a class='btn btn-info' href='editDonoPet.php?id=$user_data[id_dono_pet]'>
                               <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
                               <path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
                               <path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
@@ -153,8 +168,16 @@ echo "<a href='".$img."'> <img src='".$img."'width='150px'class='rounded-circle'
                 ?>
 
           
+          </div>
+          </div>
+
         </div>
+       
+        <div class="col-6 col-md-4"><!-- COLUNA 3-->
+
         </div>
+
+</div>
 
 <!-- RODAPE -->
 

@@ -14,12 +14,13 @@
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
   <link href="css/rolagem.css" rel="stylesheet">
-   <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
-
-
   <center> <img src="img/top.png" alt="Imagem do topo." width="100%" ></center>
 
+  <style type="text/css">
+      a{
+        color: #00008b;
+      }
+    </style>
 
     <title>Pet Leisure - cadastro</title>
 
@@ -33,7 +34,7 @@
   <div class="alert alert-primary" role="alert"> <!--cor azul claro-->
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
+        
         <div class="navbar-header">
         <nav type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <img src="./img/menu.png" width="20" height="20" alt=""></a>
@@ -50,8 +51,8 @@
             
           </li>
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+        </div>
+      </div>
     </nav>
 
 </div>
@@ -108,7 +109,8 @@
         </form>
 
       </div>
-
+      
+<br><br>
 
 <!-- RODAPE -->
 

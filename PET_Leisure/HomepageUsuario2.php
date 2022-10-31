@@ -21,7 +21,7 @@ $nomeDonoPet = $resultado['nome'];
 
 if(!empty($_GET['search'])){
   $data = $_GET['search'];
-  $sql = "SELECT * FROM usuario_prest_serv WHERE nome LIKE '%$data%' or estado LIKE '%$data%' or cidade LIKE '%$data%' or pais LIKE '%$data%' ORDER BY id_prest_serv DESC;";
+  $sql = "SELECT * FROM usuario_prest_serv WHERE nome LIKE '%$data%' or email LIKE'%$data%' or estado LIKE '%$data%' or cidade LIKE '%$data%' or pais LIKE '%$data%' ORDER BY id_prest_serv DESC;";
 }
 else{
   $sql = "SELECT * FROM usuario_prest_serv ORDER BY id_prest_serv DESC;";
@@ -49,8 +49,7 @@ else{
     <link href="css/rolagem.css" rel="stylesheet">
    <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
     <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
-    <center> <img src="img/top.png" alt="Imagem do topo." ></center>  
-  
+    <center> <img src="img/top.png" alt="Imagem do topo." width="100%"></center>  
     <style type="text/css">
       a{
         color: #00008b;
@@ -179,12 +178,9 @@ else{
   
     </div>
 
-    <div class="col-6 col-md-4">
-
+    <div class="col-6 col-md-4"> <!-- COLUNA 3-->
 
     </div>
-
-
     </div>
   </div>
 
@@ -204,7 +200,7 @@ else{
   </script>
 
 
-
+<br>
 
 
 <!-- RODAPE -->

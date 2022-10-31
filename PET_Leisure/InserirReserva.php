@@ -49,7 +49,12 @@ else{
 		<link href="css/rolagem.css" rel="stylesheet">
 		<!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
 		<script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
-		<center> <img src="img/top.png" alt="Imagem do topo." ></center>  
+		<center> <img src="img/top.png" alt="Imagem do topo." width="100%"></center>
+		<style>
+		a{
+                color: #00008b;
+            }
+		</style>
 
 	</head>
 	<body class="p-3 mb-2 bg-primary text-white">

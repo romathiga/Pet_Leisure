@@ -18,11 +18,9 @@
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/rolagem.css" rel="stylesheet">
-        <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
-             <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
+      
 
-        <center> <img src="img/top.png" alt="Imagem do topo." ></center>
-
+        <center> <img src="img/top.png" alt="Imagem do topo." width="100%"></center>
 
         <title>Alteração de Informações</title>
         <style>
@@ -39,6 +37,9 @@
             #update:hover{
                 background-image:linear-gradient(to right,rgb(0,80,172), rgb(80,19,195));
             }
+            a{
+                color: #00008b;
+            }
         </style>
     </head>
 	<body class="p-3 mb-2 bg-primary text-white"> 
@@ -46,7 +47,6 @@
 
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
               <nav type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <img src="./img/menu.png" width="20" height="20" alt=""></a>
@@ -65,8 +65,8 @@
 
                 </li>
                 </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+              </div>
+            </div>
           </nav>
 
 </div>

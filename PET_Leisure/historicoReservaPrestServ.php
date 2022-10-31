@@ -18,10 +18,9 @@
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/rolagem.css" rel="stylesheet">
-        <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
-             <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
+        
 
-        <center> <img src="img/top.png" alt="Imagem do topo." ></center>
+        <center> <img src="img/top.png" alt="Imagem do topo." width="100%" ></center>
 
 
         <title>Alteração de Informações</title>
@@ -39,6 +38,9 @@
             #update:hover{
                 background-image:linear-gradient(to right,rgb(0,80,172), rgb(80,19,195));
             }
+            a{
+                color:  #00008b;
+            }
         </style>
     </head>
 	<body class="p-3 mb-2 bg-primary text-white"> 
@@ -46,7 +48,7 @@
 
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
+              
               <div class="navbar-header">
               <nav type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <img src="./img/menu.png" width="20" height="20" alt=""></a>
@@ -65,64 +67,79 @@
 
                 </li>
                 </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+              </div>
+            </div>
           </nav>
 
 </div>
-	<?php
-	echo "<a class='p-3 mb-2 bg-primary text-white' href='HomepagePrestServ.php'>Voltar a página Inicial</a><br><br>";
-	
-	echo "<h1>Histórico de Reservas: </h1>";
 
-    $sqlSelect = "SELECT id_prest_serv FROM usuario_prest_serv WHERE email = '$logado';";
-    $resultadoPrestServ = $conexao->query($sqlSelect);
-    $resultadoIdPrestServ = mysqli_fetch_assoc($resultadoPrestServ);
-    $idPrestLogado = $resultadoIdPrestServ['id_prest_serv'];
-	$result_horarios = "SELECT * FROM reserva WHERE  id_prest_serv = $idPrestLogado order by n_reserva DESC;";
-	$resultado_horarios = mysqli_query($conexao, $result_horarios);
-	
-    
+    <div class="row">
+        <div class="col-6 col-md-4  "> 
+                
+            <div class=" " style="border-radius: 10px;"><br>
+                <?php echo "<a class='p-3 mb-2 btn bg-info text-white' href='HomepagePrestServ.php'>Voltar a página Inicial</a><br><br>"; ?>
+            </div>
+        </div>
 
-	while($row_horarios = mysqli_fetch_array($resultado_horarios)){
-     
-        ////-------
-		$sqlSelectPrestServ = "SELECT nome, email, telefone FROM usuario_prest_serv WHERE id_prest_serv = $row_horarios[id_prest_serv];";
-		$resultadoQueryPrestServ = $conexao->query($sqlSelectPrestServ);
-		if($resultadoQueryPrestServ->num_rows>0){
-			while($resultadoPrestServ = mysqli_fetch_assoc($resultadoQueryPrestServ)){
-			$nomePrestServ= $resultadoPrestServ['nome'];
-			$emailPrestServ= $resultadoPrestServ['email'];
-			$TelefonePrestServ= $resultadoPrestServ['telefone'];
-			/*echo "Nome Prestador de Serviço: ".$nomePrestServ."<br>";
-			echo "E-mail Prestador de Serviço: ".$emailPrestServ."<br>";
-			echo "Telefone p/Contato: ".$TelefonePrestServ."<br>";*/
-			}
-            }
-               $sqlSelectDonoPet = "SELECT nome, email, telefone FROM usuario_dono_pet where id_dono_pet =  $row_horarios[id_dono_pet];";
-        //echo $sqlSelectDonoPet;
-        $resultadoQueryDonoPet = $conexao->query($sqlSelectDonoPet);
-			if($resultadoQueryDonoPet->num_rows>0){
-            while($resultadoDonoPet = mysqli_fetch_assoc($resultadoQueryDonoPet)){
-                //$id_dono_pet= $resultadoDonoPet['id_dono_pet'];
-                $nome_dono_pet= $resultadoDonoPet['nome'];
-                $emailDonoPet = $resultadoDonoPet['email'];
-                $telefoneDonoPet =$resultadoDonoPet['telefone'];
-                echo "Nome Dono do Pet: ".$nome_dono_pet."<br>";
-                echo "E-mail Dono do Pet: ".$emailDonoPet."<br>";
-                echo "Telefone p/Contato: ".$telefoneDonoPet."<br>";
-                echo "Tipo Animal: ".$row_horarios['tipo_animal']."<br>";
-                echo "Observações: ".$row_horarios['observacoes']."<br>";
-		        echo "Horário : ".date('d/m/Y H:i:s', strtotime($row_horarios['data']))."<hr>";
+
+        <div class="col-6 col-md-4 alert-primary ">             
+              <?php  
+              echo "<br><h1>Histórico de Reservas: </h1><hr>";
+
+                $sqlSelect = "SELECT id_prest_serv FROM usuario_prest_serv WHERE email = '$logado';";
+                $resultadoPrestServ = $conexao->query($sqlSelect);
+                $resultadoIdPrestServ = mysqli_fetch_assoc($resultadoPrestServ);
+                $idPrestLogado = $resultadoIdPrestServ['id_prest_serv'];
+                $result_horarios = "SELECT * FROM reserva WHERE  id_prest_serv = $idPrestLogado order by n_reserva DESC;";
+                $resultado_horarios = mysqli_query($conexao, $result_horarios);
+                
+                
+
+                while($row_horarios = mysqli_fetch_array($resultado_horarios)){
+                
+                    ////-------
+                    $sqlSelectPrestServ = "SELECT nome, email, telefone FROM usuario_prest_serv WHERE id_prest_serv = $row_horarios[id_prest_serv];";
+                    $resultadoQueryPrestServ = $conexao->query($sqlSelectPrestServ);
+                    if($resultadoQueryPrestServ->num_rows>0){
+                        while($resultadoPrestServ = mysqli_fetch_assoc($resultadoQueryPrestServ)){
+                        $nomePrestServ= $resultadoPrestServ['nome'];
+                        $emailPrestServ= $resultadoPrestServ['email'];
+                        $TelefonePrestServ= $resultadoPrestServ['telefone'];
+                        /*echo "Nome Prestador de Serviço: ".$nomePrestServ."<br>";
+                        echo "E-mail Prestador de Serviço: ".$emailPrestServ."<br>";
+                        echo "Telefone p/Contato: ".$TelefonePrestServ."<br>";*/
+                        }
+                        }
+                        $sqlSelectDonoPet = "SELECT nome, email, telefone FROM usuario_dono_pet where id_dono_pet =  $row_horarios[id_dono_pet];";
+                    //echo $sqlSelectDonoPet;
+                    $resultadoQueryDonoPet = $conexao->query($sqlSelectDonoPet);
+                        if($resultadoQueryDonoPet->num_rows>0){
+                        while($resultadoDonoPet = mysqli_fetch_assoc($resultadoQueryDonoPet)){
+                            //$id_dono_pet= $resultadoDonoPet['id_dono_pet'];
+                            $nome_dono_pet= $resultadoDonoPet['nome'];
+                            $emailDonoPet = $resultadoDonoPet['email'];
+                            $telefoneDonoPet =$resultadoDonoPet['telefone'];
+                            echo "Nome Dono do Pet: ".$nome_dono_pet."<br>";
+                            echo "E-mail Dono do Pet: ".$emailDonoPet."<br>";
+                            echo "Telefone p/Contato: ".$telefoneDonoPet."<br>";
+                            echo "Tipo Animal: ".$row_horarios['tipo_animal']."<br>";
+                            echo "Observações: ".$row_horarios['observacoes']."<br>";
+                            echo "Horário : ".date('d/m/Y H:i:s', strtotime($row_horarios['data']))."<hr>";
+                            }
+                        }
+                
+                    
                 }
-            }
-	
-		
-	}
-	
+                
+                        
+                ?>
+            </div>
+        
+            <div class="col-6 col-md-4 " >
             
-	 ?>
-
+            </div>
+    </div>
+<br><br>
 
 <!-- RODAPE -->
 

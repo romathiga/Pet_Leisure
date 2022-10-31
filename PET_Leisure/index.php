@@ -20,6 +20,14 @@
 
 
     <center> <img src="img/top.png" alt="Imagem do topo." width="100%" ></center>
+
+    <style type="text/css">
+      a{
+        color: #00008b;
+      }
+    </style>
+  
+  
   </head>
 
 

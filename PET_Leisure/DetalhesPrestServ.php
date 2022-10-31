@@ -80,9 +80,6 @@ if(!empty($_GET['id'])){
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/rolagem.css" rel="stylesheet">
-        <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
-             <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
-
         <center> <img src="img/top.png" alt="Imagem do topo." width="100%"></center>
 
 
@@ -115,7 +112,7 @@ if(!empty($_GET['id'])){
 
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
+        
               <div class="navbar-header">
               <nav type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <img src="./img/menu.png" width="20" height="20" alt=""></a>
@@ -134,209 +131,108 @@ if(!empty($_GET['id'])){
 
                 </li>
                 </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+              </div>
+            </div>
           </nav>
 
 </div>
-
-        <div id="cadastro">
-
-            <form action="InserirReserva.php" method="POST"  class="card1" >
-            <br>
-
-<div class="card-header">
-
-                    <h2>Perfil Prestador de serviço. </h2>
-
-                </div>
-            
         <div class="row">
-            <div class="col-8 col-md-3 "> <br> <!-- COLUNA 1 -->
-                <?php
-                     echo "<a href='".$img."'> <img src='".$img."'width='150' class='rounded-circle' height='150' > "."</a><br> ";
-                ?>
-                <br>
+            <div class="col-7 col-md-3 "> <br> <!-- COLUNA 1 -->
+                
             </div>
-            
-            <div class="col-8 col-md-6 alert-primary" >  
 
+            <div class="col-8 col-md-6 alert-primary" style="padding: 0;">  <!-- COLUNA 2 -->
+                <div id="cadastro" alert-primary style="margin-left:0px;">
+        
 
-                <div class="InputBox">
-                    <div class="InputBox">
+        <form action="InserirReserva.php" method="POST"  class="card" >
+
+            <div class="card-header bg-info mb-0 " >
+              
+              <div style="margin-left:39%; margin-top: 5%; margin-bottom: 5%; width:100%;">
+              <!-- Imagem de perfil -->
+              <?php
+                
+                    echo "<a href='".$img."'> <img src='".$img."'width='150' class='rounded-circle' height='150' > "."</a><br> ";
+              ?>
+              </div><hr>
+
+              <div style="margin-left:23%; margin-top: 0%; margin-bottom: 3%;">
+                    <h2>Perfil - Prestador de serviço </h2>
+              </div>
+
+            </div>
+
+                <div class="card-body alert-primary">
                         <br>
-                        <label>E-Mail: </label><br>
-                        <input type="email" name="email" required id="email" value="<?php echo $email?>" readonly>
-                    </div>
+                        <label><b>E-Mail:</b> </label>
+                        <?php echo $email?>
                     
-                    <div class="card-content-area">
-                        <br><label>Nome: </label><br>
-                        <input type="text" name="nome" required value="<?php echo $nome?>" readonly>
-                    </div>
-
-
-                    <!-- <div class="card-content-area">
-                        <p>CPF/CNPJ Prestador de Serviço:</p>
-                        <input type="text" name="docIdentidade"  
-                        required pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2}))" value="<?php echo $docIdentidade?>" readonly>
-
-                    </div>
-                    <br> -->
-
-                    <div class="card-content-area">
-                        <br><label>*Telefone para contato: </label><br>
-                        <input type="text" name="tel"  
-                        required pattern="(\d{2}\.?\d{1}\.?\d{4}-?\d{4})"value="<?php echo $telefone?>" readonly>
-                    </div>
-
-                    <!--<div class="card-content-area">
-                        <label>*Nos envie imagem sua ou de sua logo para servir de perfil:</label>
-                        <input type="file" name="perfil" required >
-                    </div>
-                    <br>-->
-
-                    <div class="card-content-area">   
-                        <br><label><b>*Esse perfil fornece:</b></label><br>
-                        
-                        Hospedagem/Diária?  <input type="text" name="hospedagem" required value="<?php echo $hospedagem?>" readonly>
-                        <br><br> 
-                        Creche/Semanal ou Mensal? <input type="text"  name="creche" required value="<?php echo $creche?>" readonly>
+                        <br><label><b>Nome: </b></label>
+                       <?php echo $nome?>
+                    
+                        <br><label><b>Telefone para contato:</b> </label>
+                       <?php echo $telefone?>
+                   
+                    <hr>  
+                        <label><b>Esse perfil fornece:</b></label><br>
+                        <b>Hospedagem/Diária?</b>  <?php echo " ".$hospedagem?>
+                        <br>
+                        <b>Creche/Semanal ou Mensal? </b> <?php echo " ".$creche?>
                         <br><br>
-                   </div>
-
-                    <div class="card-content-area">    
-                        Preço do Serviço(R$): <input type="text" name="precoReserva"  
-                         required value="<?php echo $precoReserva?>" readonly>
+   
+                       <b> Preço do Serviço(R$):</b><br> <?php echo $precoReserva?>
                         <br>
-                    </div>
                     
-                    <div class="card-content-area">
-                        <br><label>*Quantos animais no total o local tem condições de acomodar por dia:</label><br>
-                        <input type="number" max="10" min="1" name="qtdAnimais" required value="<?php echo $qtdAnimaisAceitos;?>" readonly>
-                    </div>
-
-                    <!--<div class="card-content-area">
-                        <label>Se houver, nos envie certificações ou experiências relacionadas na area: </label>
-                        <input type="file" name="certificacao" multiple>
-                    </div>
-                    <br> 
-
-                    <div class="card-content-area">
-                        <label>*Nos envie imagens do local onde será realizado os trabalhos:</label>
-                        <input type="file" name="local" required multiple>
-                    </div>-->
-                     
-
-                    <div class="card-content-area">
-                        <br><label>*Animais aptos a usufruir desse local: </label></div>
-                        <p>Cães:</p>
-                        <input type="text" name="cachorro"  
-                        required value="<?php echo $aceitaCachorro?>" readonly>
-                        <hr>
-                        <p>Gatos:</p>
-                        <input type="text" name="gato"  
-                        required value="<?php echo $aceitaGato?>" readonly>
+                        <br><label><b>Esse local acomoda:</b></label><br>
+                        <?php echo $qtdAnimaisAceitos." animais por dia.";?><br>
+                
+                        <br><label><b>Animais aptos a usufruir desse local:</b> </label><br>
+                        <?php echo "<b>"."Cães: "."</b> ".$aceitaCachorro?>
+                       <br>
+                        <?php echo "<b>"."Gatos: "."</b>".$aceitaGato?>
                         </select>
-                        <hr>
-                        <p>Passáros:</p>
-                        <input type="text" name="passaro"  
-                        required value="<?php echo $aceitaPassaro?>" readonly>
                         <br>
-                     
-
-
-                    <div class="card-content-area">
-
-                        <label>ENDEREÇO</label>
+                        <?php echo "<b>"."Pássaros: "."</b>".$aceitaPassaro?>
+                        <br>
+                        <br>
+                    <hr>
+                        <b><label><u>ENDEREÇO</u></label></b>
                         <p>Local Onde os pets irão se acomodar:
-                        </p>
+                        <br><?php echo $logradouro." - ".$numero.", ".$bairro.", ".$cidade.", ".$cep.", SP - Brasil"; ?>
+                    <hr>
 
-                        <b></b><label>*Rua: </label>
-                        <input type="text" name="logradouro" required value="<?php echo $logradouro ?>" readonly>
-
+                        <label><u><b>Recado do Prestador de Serviços:</b></u> </label><br>
+                        <textarea name="obs"  required readonly style="width:100%;"><?php echo $obs?></textarea><br>
+                    
+                    <hr>
+                    <div class="alert-primary text-center">
+                    <input type="hidden" name="id" value="<?php echo $id?>">
+                        <?php echo " <a class='btn btn-info' href='InserirReserva.php?id=$id'>"."Efetuar Reserva: "."
+                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-calendar-check' viewBox='0 0 16 16'>
+                        <path d='M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z'/>
+                        <path d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/>
+                        </svg></a>"."<br><br>";?>
+                        <?php echo " <a class='btn btn-info' href='Comentarios.php?id=$id'>"."Comentários e avaliações: "."
+                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-calendar-check' viewBox='0 0 16 16'>
+                        <path d='M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z'/>
+                        <path d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/>
+                        </svg></a>"."<br>";?>
+                        <!--<input type="submit" name="update" value="Efetuar Reserva" id="update" >-->
+                        <br>
                     </div>
-
-                    <div class="card-content-area">
-
-                        <label>*CEP:</label>
-                        <input type="text" name="cep" required pattern="(\d{2}\.?\d{3}\.?\d{3})" value="<?php echo $cep ?>"readonly>
-
-                    </div>
-
-                    <div class="card-content-area">
-
-                        <label>*Número:</label>
-                        <input type="text" name="numero" minlength="1" maxlength="4" required value="<?php echo $numero ?>"readonly>
-
-                    </div>
-
-                    <div class="card-content-area">
-
-                        <label>*Bairro:</label>
-                        <input type="text" name="bairro" required value="<?php echo $bairro ?>"readonly>
-
-                    </div>
-
-                    <div class="card-content-area">
-
-                        <label for="pais">*País:</label> </div>
-                        <select name="pais"> 
-                         <option value="br" readonly>Brasil</option>
-                         </select>
-
-
-
-                    <div class="card-content-area">
-
-                        <label for="estado">*Estado:</label></div>
-                        <select name="estado"> 
-                        <option value="sp" readonly>São paulo</option> 
-                        </select>
-
-
-
-                    <div class="card-content-area">
-
-                        <label for="cidade" readonly>*Cidade:</label></div>
-                        <select name="cidade"> 
-                        <option><?php echo $cidade?></option>
-                        </select>
-
-
-
-                    <div class="card-content-area">
-                        <label>*Recado do Prestador de Serviços: </label><br>
-                        <textarea name="obs"  required readonly><?php echo $obs?></textarea>
-                    </div>
-
-
+            
                 </div>
-
+            </form>
+                </div>
+        
             </div>
             
-            <div class="col-8 col-md-3 alert-primary" style="border-left:3px; border-right: 0px; border-top: 0px; border-bottom: 0px; border-style: solid; border-color: black;"> 
+            <div class="col-8 col-md-3 "> <!-- COLUNA 3 --> 
                 <br>
     
 
-                <div class="alert-primary text-center">
-                    <input type="hidden" name="id" value="<?php echo $id?>">
-                     <?php echo "Efetuar Reserva:";echo " <a class='btn btn-info' href='InserirReserva.php?id=$id'>
-                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-calendar-check' viewBox='0 0 16 16'>
-                <path d='M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z'/>
-                <path d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/>
-                </svg></a>"."<br>";?>
-                 <?php echo "Comentarios e avaliações:";echo " <a class='btn btn-info' href='Comentarios.php?id=$id'>
-                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-calendar-check' viewBox='0 0 16 16'>
-                <path d='M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z'/>
-                <path d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/>
-                </svg></a>"."<br>";?>
-                    <!--<input type="submit" name="update" value="Efetuar Reserva" id="update" >-->
-                </div>
-
-            </form>
-
             </div>
-        
 
 
         </div>

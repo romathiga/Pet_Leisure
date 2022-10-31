@@ -22,8 +22,7 @@
         <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
              <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
 
-        <center> <img src="img/top.png" alt="Imagem do topo." ></center>
-
+             <center> <img src="img/top.png" alt="Imagem do topo." width="100%"></center>
 
         <title>Alteração de Informações</title>
         <style>
@@ -39,6 +38,9 @@
             }
             #update:hover{
                 background-image:linear-gradient(to right,rgb(0,80,172), rgb(80,19,195));
+            }
+            a{
+                color: #00008b;
             }
         </style>
     </head>

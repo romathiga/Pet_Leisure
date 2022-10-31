@@ -21,7 +21,7 @@ $nomeDonoPet = $resultado['nome'];
 
 if(!empty($_GET['search'])){
   $data = $_GET['search'];
-  $sql = "SELECT * FROM usuario_prest_serv WHERE nome LIKE '%$data%' or estado LIKE '%$data%' or cidade LIKE '%$data%' or pais LIKE '%$data%' ORDER BY id_prest_serv DESC;";
+  $sql = "SELECT * FROM usuario_prest_serv WHERE nome LIKE '%$data%' or email LIKE'%$data%' or estado LIKE '%$data%' or cidade LIKE '%$data%' or pais LIKE '%$data%' ORDER BY id_prest_serv DESC;";
 }
 else{
   $sql = "SELECT * FROM usuario_prest_serv ORDER BY id_prest_serv DESC;";
@@ -40,16 +40,13 @@ $result = $conexao->query($sql);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Pet Leisure - home</title>
-
-    <!-- Bootstrap -->
     <link rel="shortcut icon" href="../PET_Leisure/img/favicon.png" >
+    <!-- Bootstrap -->
+   
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/rolagem.css" rel="stylesheet">
-   <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
-    <center> <img src="img/top.png" alt="Imagem do topo." ></center>  
+    <center> <img src="img/top.png" alt="Imagem do topo." width="100%" ></center>  
   
     <style type="text/css">
       a{
@@ -65,7 +62,7 @@ $result = $conexao->query($sql);
 
     <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+    
     <div class="navbar-header">
     <nav type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <img src="./img/menu.png" width="20" height="20" alt=""></a>
@@ -83,8 +80,8 @@ $result = $conexao->query($sql);
           
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 </div>
 
@@ -96,7 +93,7 @@ $result = $conexao->query($sql);
         ?>
     </div>
 
-    <div class="col-6 col-md-4 alert-primary"> 
+    <div class="col-6 col-md-4 alert-primary"> <!-- COLUNA 2-->
 
 
             <br>
@@ -178,7 +175,7 @@ $result = $conexao->query($sql);
   
     </div>
 
-    <div class="col-6 col-md-4">
+    <div class="col-6 col-md-4"> <!-- COLUNA 3-->
 
     </div>
 
@@ -201,7 +198,7 @@ $result = $conexao->query($sql);
     }
   </script>
 
-
+<br>
 
 
 

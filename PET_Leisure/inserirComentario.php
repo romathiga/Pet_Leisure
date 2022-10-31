@@ -12,13 +12,10 @@
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/rolagem.css" rel="stylesheet">
-        <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
-             <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
 
-        <center> <img src="img/top.png" alt="Imagem do topo." ></center>
+             <center> <img src="img/top.png" alt="Imagem do topo." width="100%"></center>
 
-
-        <title>Alteração de Informações</title>
+        <title>Inserindo comentários</title>
         <style>
             #update{
                 background-image: linear-gradient(to right, rgb(0,92,197), rgb(90,20,220));
@@ -33,6 +30,9 @@
             #update:hover{
                 background-image:linear-gradient(to right,rgb(0,80,172), rgb(80,19,195));
             }
+            a{
+                color: #00008b;
+            }
         </style>
     </head>
     <body class="p-3 mb-2 bg-primary text-white"> 
@@ -40,7 +40,6 @@
 
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
               <nav type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <img src="./img/menu.png" width="20" height="20" alt=""></a>
@@ -59,16 +58,23 @@
 
                 </li>
                 </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+              </div>
+            </div>
           </nav>
 
-</div>
-                
-
-                    </div>
+    </div>      
+        </div>
                     
 
+
+<div class="row">
+
+        <div class="col-6 col-md-4 "> <br><!-- COLUNA 1-->
+        </div>
+
+
+
+        <div class="col-6 col-md-4 alert-primary" style="border-radius: 10px"> <!-- COLUNA 2-->
 
 <?php 
 	session_start();
@@ -97,24 +103,32 @@
     }
     
 ?>
-    <form class="form-horizontal" action="processaComentario.php" method="POST">
-                <div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
+        <form class="form-horizontal" action="processaComentario.php" method="POST">
+                <div class="form-group" >
+					<div class="col-sm-offset-2 col-sm-10" >
 						<input type="hidden" name="idPrestServ" value="<?php echo $id?>">
 						<input type="hidden" name="nomeDonoPet" value="<?php echo $nomeDonoPet?>">
                         <input type="hidden" name="emailDonoPet" value="<?php echo $email?>">
                         <div class="card-content-area">
-                        <label>*Fale um pouco sobre a sua experiência, críticas ou sugestões. </label>
+                        <br><label>*Fale um pouco sobre a sua experiência, críticas ou sugestões. </label>
                         <br>
                         <textarea name="comentario" maxlength="2000"  required></textarea><br><br>
 
-						<button type="submit" class="btn btn-success">Cadastrar</button>
-					</div>
-				</div>
+						<button type="submit" class="btn btn-success">Cadastrar</button><br>
+					    </div>
+				    </div>
+                </div>
 			
-</form>
+        </form>
+        
 
-    
+        </div>
+
+        <div class="col-6 col-md-4 "> <br><!-- COLUNA 3-->
+        </div>
+
+</div>
+    <br><br>
 <!-- RODAPE -->
 
 <?php

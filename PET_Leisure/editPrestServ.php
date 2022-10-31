@@ -68,10 +68,9 @@ if(!empty($_GET['id'])){
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/rolagem.css" rel="stylesheet">
-        <!-- <script type="text/javascript" src="/js/jquery.min.js"> </script>
-             <script type="text/javascript" src="/js/bootstrap.min.js"> </script>-->
+       
 
-        <center> <img src="img/top.png" alt="Imagem do topo." ></center>
+        <center> <img src="img/top.png" alt="Imagem do topo." width="100%"></center>
 
 
         <title>Alteração de Informações</title>
@@ -89,6 +88,9 @@ if(!empty($_GET['id'])){
             #update:hover{
                 background-image:linear-gradient(to right,rgb(0,80,172), rgb(80,19,195));
             }
+            a{
+                color: #00008b;
+            }
         </style>
     </head>
 
@@ -97,7 +99,6 @@ if(!empty($_GET['id'])){
 
         <nav class="navbar navbar-default">
             <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
               <nav type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <img src="./img/menu.png" width="20" height="20" alt=""></a>
@@ -109,209 +110,192 @@ if(!empty($_GET['id'])){
                 <li><a href="HomepagePrestServ.php">Home</a></li>
         
                 <li><a href="perfilPrestServ.php">Meu Perfil</a></li>
+                
+                <li><a href="listarReservaPrestServ.php">Reservas</a></li>
         
                 <li><a href="sairPrestServ.php">Sair</a></li>
 
                 </li>
                 </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
+              </div>
+            </div>
           </nav>
 
 </div>
 
         <div id="cadastro">
 
-            <form action="saveEditPrestServ.php" method="POST"  class="card1" >
+            <form action="saveEditPrestServ.php" method="POST" class="card" style="margin-left: 25%; margin-right: 25%;" enctype="multipart/form-data">
 
-                <div class="card-header">
-
-                    <h2>Meu Perfil </h2>
-
+                <div class="card-header bg-info mb-0">
+                    <h2>Alterando dados: </h2>
                 </div>
 
-                <div class="InputBox">
+                <div class="card-content bg-info clearfix mb-0">
 
-                    <div class="InputBox">
-
-                        <label>DADOS DE LOGIN</label>
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                        <br><label><b><u>DADOS DE LOGIN</u></b></label><br>
                         <label>*Email</label>
-                        <input type="email" name="email" required id="email" value="<?php echo $email?>" readonly>
-
+                        <br><input type="email" name="email" required  style="width:100%;" id="email" value="<?php echo $email?>" readonly>
                     </div>
 
 
-                    <div class="card-content-area">
-
-                        <label for="password">*Senha</label>
-                        <p>Crie uma senha com no mínimo 6 e no máximo 10 caracteres.</p>
-                        <input type="password" name="password"  required minlength="6" maxlength="10" value="<?php echo $password?>" readonly>
-
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                        <br><label for="password">*Senha</label>
+                        <br><input type="password" name="password"  required style="width:100%;" minlength="6" maxlength="10" value="<?php echo $password?>" readonly>
+                        <small id="passwordHelpInline" class="text-white">
+                        Sua senha (impossível alterar).                      
+                        </small>                      
                     </div>
                     
 
-                    <div class="card-content-area">
-
-                        <br><br><label>DADOS PESSOAIS</label>
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                        <hr><br><label><b><u>DADOS PESSOAIS</u></b></label><br>
                         <label>*Nome Completo</label>
-                        <input type="text" name="nome" required value="<?php echo $nome?>">
-
+                        <br><input type="text" name="nome" required style="width:100%;" value="<?php echo $nome?>">
                     </div>
 
 
-                    <div class="card-content-area">
-
-                        <label>CPF/CNPJ</label>
-                        <p>Seu documento de identidade(impossível alterar)</p>
-                        <input type="text" name="docIdentidade"  
-                        required pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2}))" value="<?php echo $docIdentidade?>" readonly>
-
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                        <br><label>CPF/CNPJ</label>
+                        <br><input type="text" name="docIdentidade"  
+                        required style="width:100%;" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2}))" value="<?php echo $docIdentidade?>" readonly>
+                        <small id="passwordHelpInline" class="text-white">
+                            Seu documento de identidade (impossível alterar).                      
+                        </small>  
                     </div>
                     <br>
 
-                    <div class="card-content-area">
-
-                     <label>*Telefone para contato</label>
-                        <p>Digite o número sem pontos ou traços e não se esqueça do DDD.</p>
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                     <label>*Telefone para contato</label><br>
                         <input type="text" name="tel"  
-                        required pattern="(\d{2}\.?\d{1}\.?\d{4}-?\d{4})"value="<?php echo $telefone?>">
-
+                        required style="width:100%;" pattern="(\d{2}\.?\d{1}\.?\d{4}-?\d{4})"value="<?php echo $telefone?>">
+                        <small id="passwordHelpInline" class="text-white">
+                            Digite o número sem pontos ou traços e não se esqueça do DDD.                      
+                        </small>  
                     </div>
                     <br>
 
-                    <div class="card-content-area">
+                    <!-- <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%">
                         <label>*Nos envie imagem sua ou de sua logo para servir de perfil:</label>
                         <input type="file" name="perfil" required >
                     </div>
-                    <br> 
+                    <br> -->
 
-                    <div class="card-content-area">
-                       
-                    <label >*Quais serviços você ira fornecer?</label></div>
-                    <P>Hospedagem/Diária</p>
-                    <select name="hospedagem"> 
-                        <option value="sim" >Sim</option>
-                        <option value="nao" >Não</option> 
-                    </select>
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                    <hr><br><label><u><b>SOBRE OS PETS</b></u></label><br><br>
+                            
+                            <label >*Quais serviços você ira fornecer?</label>
+                            <P>Hospedagem/Diária</p>
+                            <select name="hospedagem" style="width:100%;"> 
+                                <option value="sim" >Sim</option>
+                                <option value="nao" >Não</option> 
+                            </select>
+                            
+                            <br><br> 
+                            <p>Creche/Semanal ou Mensal</p>
+                            <select name="creche" style="width:100%;"> 
+                                <option value="sim" >Sim</option>
+                                <option value="nao" >Não</option> 
+                            </select>
+                            
+                    </div>
+                    <br>
                     
-                    <br><br> 
-                    <p>Creche/Semanal ou Mensal</p>
-                    <select name="creche"> 
-                        <option value="sim" >Sim</option>
-                        <option value="nao" >Não</option> 
-                    </select>
-                    <hr><br>
-                   
-                    
-                    
-                    <div class="card-content-area">
-                        
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
                         <label>*Quantos animais no total o local tem condições de acomodar por dia?</label>
-                        <input type="number" max="10" min="1" name="qtdAnimais" required>
-                    
+                        <input type="number" max="10" min="1" name="qtdAnimais" required style="width:100%;">
                     </div>
                     <br> 
 
-                    <div class="card-content-area">
-                        <label>Se houver, nos envie certificações ou experiências relacionadas na area: </label>
-                        <input type="file" name="certificacao" multiple>
-                    </div>
-                    <br> 
-
-                    <div class="card-content-area">
-                    <label>*Valor cobrado pelo Serviço: </label>
-                    <input type="text" name="precoReserva" required value="<?php echo $precoReserva ?>">
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                        <label>*Valor cobrado pelo Serviço: </label>
+                        <input type="text" name="precoReserva" required value="<?php echo $precoReserva ?>" style="width:100%;">
                     </div>
 
-                    <div class="card-content-area">
-                        <label>*Nos envie imagens do local onde será realizado os trabalhos:</label>
-                        <input type="file" name="local" required multiple>
-                    </div>
-                    <br> 
 
-                    <div class="card-content-area">
-                       
-                        <label>*Quais animais são aptos a usufruir desse local? </label></div>
-                        <p>Cachorro</p>
-                        <select name="cachorro">
-                        <option value="sim">Sim</option>
-                        <option value="nao" >Não</option>
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                       <br> <label>*Quais animais são aptos a usufruir desse local? </label>
+                        <br><p>Cachorro</p>
+                        <select name="cachorro" style="width:100%;"> 
                         <option ><?php echo $aceitaCachorro?></option>
-                        </select>
-                        <hr><br>
-                        <p>Gato</p>
-                        <select name="gato">
                         <option value="sim">Sim</option>
                         <option value="nao" >Não</option>
+                        
+                        </select>
+                    </div>
+
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                       <br><p>Gato</p>
+                        <select name="gato" style="width:100%;">
                         <option ><?php echo $aceitaGato?></option>
-                        </select>
-                        <hr><br>
-                        <p>Pássaro</p>
-                        <select name="passaro">
                         <option value="sim">Sim</option>
                         <option value="nao" >Não</option>
-                        <option ><?php echo $aceitaPassaro?></option>
+                        
                         </select>
-                        <hr><br>
-              
+                    </div> 
+
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">   
+                        <br><p>Pássaro</p>
+                        <select name="passaro" style="width:100%;">
+                        <option ><?php echo $aceitaPassaro?></option>
+                        <option value="sim">Sim</option>
+                        <option value="nao" >Não</option>
+                        
+                        </select>
+                        
                      </div>
-             
-                     </div> 
+                     
+                     <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                        <br><label>*Fale um pouco sobre você e o ambiente para aconchego dos bichanos, diga o que achar relevante: </label>
+                        <textarea name="obs"  required style="width:100%;"><?php echo $obs?></textarea>
+                    </div><br>
 
 
-                    <div class="card-content-area">
-
-                        <br><br><br><label>ENDEREÇO</label>
+                     <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                       <hr> <br><label><b><u>ENDEREÇO</u></b></label>
                         <p>Ele servirá para que os donos de pet consigam te encontrar.</p>
 
                         <b></b><label>*Rua: </label>
-                        <input type="text" name="logradouro" required value="<?php echo $logradouro ?>">
-
+                        <br><input type="text" name="logradouro" required value="<?php echo $logradouro ?>" style="width:100%;">
                     </div>
 
-                    <div class="card-content-area">
-
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
                         <label>*CEP:</label>
-                        <input type="text" name="cep" required pattern="(\d{2}\.?\d{3}\.?\d{3})" value="<?php echo $cep ?>">
-
+                        <br><input type="text" name="cep" required pattern="(\d{2}\.?\d{3}\.?\d{3})" value="<?php echo $cep ?>" style="width:100%;">
                     </div>
 
-                    <div class="card-content-area">
-
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
                         <label>*Número:</label>
-                        <input type="text" name="numero" minlength="1" maxlength="4" required value="<?php echo $numero ?>">
-
+                        <br><input type="text" name="numero" minlength="1" maxlength="4" required value="<?php echo $numero ?>" style="width:100%;">
                     </div>
 
-                    <div class="card-content-area">
-
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
                         <label>*Bairro:</label>
-                        <input type="text" name="bairro" required value="<?php echo $bairro ?>">
-
+                       <br> <input type="text" name="bairro" required value="<?php echo $bairro ?>" style="width:100%;">
                     </div>
 
-                    <div class="card-content-area">
-
-                        <label for="pais">*País:</label> </div>
-                        <select name="pais"> 
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                        <label for="pais">*País:</label> 
+                        <br><select name="pais" style="width:100%;"> 
                          <option value="br">Brasil</option>
                          </select>
+                    </div>
 
 
 
-                    <div class="card-content-area">
-
-                        <label for="estado">*Estado:</label></div>
-                        <select name="estado"> 
+                    <div class="card-content-area  bg-info mb-0" style="margin-left: 2%; margin-right: 2%;">
+                        <label for="estado">*Estado:</label>
+                        <br><select name="estado" style="width:100%;"> 
                         <option value="sp">São paulo</option> 
                         </select>
+                    </div>
 
 
 
-                    <div class="card-content-area">
-
-                        <label for="cidade">*Cidade:</label></div>
-                        <select name="cidade"> 
+                    <div class="card-content-area  bg-info mb-0"  style="margin-left: 2%; margin-right: 2%;">
+                        <label for="cidade">*Cidade:</label>
+                        <br><select name="cidade" style="width:100%;"> 
                         <option value="americana">Americana</option> 
                         <option value="amparo">Amparo</option> 
                         <option value="arturNogueira">Artur Nogueira</option> 
@@ -334,29 +318,20 @@ if(!empty($_GET['id'])){
                         <option value="vinhedo">Vinhedo</option> 
                         <option ><?php echo $cidade?></option>
                         </select>
-
-
-
-                    <div class="card-content-area">
-                        <label>*Fale um pouco sobre você e o ambiente para aconchego dos bichanos, diga o que achar relevante: </label>
-                        <textarea name="obs"  required><?php echo $obs?></textarea>
-                    </div>
-
+                    </div><br>
 
 
                 </div>
 
-                <div class="card-footer">
+                <div class="card-footer bg-info mb-0" >
                     <input type="hidden" name="id" value="<?php echo $id?>">
-                    <input type="submit" name="update" value="Salvar" id="update">
+                    <input type="submit" name="update" value="Salvar" id="update" style="margin-left: 31%; width:35%;">
                 </div>
 
             </form>
 
-
-
-
         </div>
+        <br><br>
 
 
 <!-- RODAPE -->
