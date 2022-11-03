@@ -46,6 +46,7 @@
               </nav>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <hr>
                 <ul class="nav navbar-nav navbar-right">
 
                 <li><a href="HomepageUsuario.php">Home</a></li>
@@ -112,9 +113,9 @@
                         <div class="card-content-area">
                         <br><label>*Fale um pouco sobre a sua experiência, críticas ou sugestões. </label>
                         <br>
-                        <textarea name="comentario" maxlength="2000"  required></textarea><br><br>
+                        <textarea name="comentario" maxlength="2000"  required style="width:100%;"> </textarea><br><br>
 
-						<button type="submit" class="btn btn-success">Cadastrar</button><br>
+						<button type="submit" class="btn btn-info">Cadastrar</button><br>
 					    </div>
 				    </div>
                 </div>
@@ -128,6 +129,7 @@
         </div>
 
 </div>
+
     <br><br>
 <!-- RODAPE -->
 

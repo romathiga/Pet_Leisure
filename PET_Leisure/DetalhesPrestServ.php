@@ -57,7 +57,7 @@ if(!empty($_GET['id'])){
     $sql_IMG = "SELECT perfil from imagem_Prest where id_prestServ = $id_prest_serv;";   
     $consulta_IMG = $conexao->query($sql_IMG); 
     $resultado_IMG = mysqli_fetch_assoc($consulta_IMG);
-     $imagem_Prestserv = $resultado_IMG['perfil'].".png";
+     $imagem_Prestserv = $resultado_IMG['perfil']."";
     //echo $imagem_Prestserv;
     //$extensao == '.png';
     $img = "uploads/".$imagem_Prestserv;

@@ -69,8 +69,10 @@ $result = $conexao->query($sql);
     </nav>
      
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <hr>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="HomepageUsuario.php">Home</a></li>
+       
+       <li><a href="HomepageUsuario.php">Home</a></li>
         
         <li><a href="perfilDonoPet.php">Meu Perfil</a></li>
 
@@ -171,7 +173,9 @@ $result = $conexao->query($sql);
                     
                     echo "<a href='HomepageUsuario.php?pagina=$quantidade_pg'>Ultima</a>";
                     
+                    
                     ?>
+                    <br>
   
     </div>
 
@@ -198,7 +202,7 @@ $result = $conexao->query($sql);
     }
   </script>
 
-<br>
+<br><br>
 
 
 

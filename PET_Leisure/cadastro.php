@@ -17,6 +17,19 @@
   <center> <img src="img/top.png" alt="Imagem do topo." width="100%" ></center>
 
   <style type="text/css">
+      #update{
+                background-image: linear-gradient(to right, rgb(0,40,190), rgb(20,50,180));
+                width:50%;
+                border: none;
+                padding: 15px;
+                color:white;
+                font: size 15px;
+                cursor: pointer;
+                border-radius:10px;
+            }
+            #update:hover{
+                background-image:linear-gradient(to right,rgb(10,20,80), rgb(10,20,80));
+            }
       a{
         color: #00008b;
       }
@@ -41,6 +54,7 @@
         </nav>
           
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <hr>
           <ul class="nav navbar-nav navbar-right">
          
             <li><a href="index.php">Home</a></li>
@@ -80,7 +94,7 @@
             </div>
 
             <div class="card-footer bg-info mb-0">
-                <input type="submit" class="btn btn-primary"  value="Cadastrar" class="submit">
+              <input type="submit" name="update" value="Cadastrar" id="update" style="margin-left: 31%; width:35%;">
             </div>
         </form>
 
@@ -104,7 +118,7 @@
           </div>
 
           <div class="card-footer bg-info mb-0">
-            <input type="submit" class="btn btn-primary"  value="Cadastrar" class="submit">
+            <input type="submit" name="update" value="Cadastrar" id="update" style="margin-left: 31%; width:35%;">
           </div>
         </form>
 

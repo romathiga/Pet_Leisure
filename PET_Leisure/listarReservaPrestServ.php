@@ -74,11 +74,13 @@
 </div>
 
     <div class="row">
-        <div class="col-7 col-md-2  "> 
+        <div class="col-7 col-md-2  "> <!-- COLUNA 1--> 
                 
             <div class=" " style="border-radius: 10px;">
                 <?php echo "<br><a class='btn alert-primary' href='HomepagePrestServ.php'>Voltar a página Inicial</a><br><br>";?>
             </div>
+
+
             <div>
                <?php echo " <a class='btn alert-primary' href='historicoReservaPrestServ.php' >"."Histórico de Reservas: "."
                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-calendar-check' viewBox='0 0 16 16'>
@@ -90,7 +92,7 @@
         </div>
 
 
-        <div class="col-5 col-md-5 alert-primary ">     
+        <div class="col-5 col-md-5 alert-primary "  style="border: 3px solid #00008b;">     
            
             <?php
                 
@@ -137,7 +139,7 @@
                             echo "Tipo Animal: ".$row_horarios['tipo_animal']."<br>";
                             echo "Observações: ".$row_horarios['observacoes']."<br>";
                             echo "Horário: ".date('d/m/Y H:i:s', strtotime($row_horarios['data']))."<br>";
-                            echo "Deletar Reserva: ";echo " <a class='btn btn-info' href='deletaReserva.php?id=$n_reserva'>
+                            echo "Deletar Reserva: ";echo " <a class='btn btn-danger' href='deletaReserva.php?id=$n_reserva'>
                             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-calendar-check' viewBox='0 0 16 16'>
                             <path d='M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z'/>
                             <path d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/>
@@ -150,7 +152,7 @@
                 ?>
         </div>
         
-        <div class="col-5 col-md-4 alert-primary" style="border-left: 3px solid #00008b;">   
+        <div class="col-5 col-md-4 alert-primary" style="border: 3px solid #00008b;">   
              <?php
             echo "<br><h1>Reservas deste mês: </h1><br><hr>";
             
@@ -184,9 +186,10 @@
                             echo "E-mail Dono do Pet: ".$emailDonoPet."<br>";
                             echo "Telefone p/Contato: ".$telefoneDonoPet."<br>";
                             echo "Tipo Animal: ".$row_horarios['tipo_animal']."<br>";
-                            echo "Observações: ".$row_horarios['observacoes']."<br>";
-                            echo "Horário: ".date('d/m/Y H:i:s', strtotime($row_horarios['data']))."<br>";
-                            echo "Deletar Reserva: ";echo " <a class='btn btn-info' href='deletaReserva.php?id=$n_reserva'>
+                             echo "Horário: ".date('d/m/Y H:i:s', strtotime($row_horarios['data']))."<br>";
+                             echo "<b>Observações: </b>".$row_horarios['observacoes']."<br><br>";
+                           
+                            echo " <a class='btn btn-danger' href='deletaReserva.php?id=$n_reserva'>"."Deletar Reserva: "." 
                                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-calendar-check' viewBox='0 0 16 16'>
                                 <path d='M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z'/>
                                 <path d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/>

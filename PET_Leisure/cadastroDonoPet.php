@@ -94,7 +94,20 @@ if(isset($_POST['submit'])){
 
     
         <style type="text/css">
-                a{
+              #update{
+                background-image: linear-gradient(to right, rgb(0,40,190), rgb(20,50,180));
+                width:50%;
+                border: none;
+                padding: 15px;
+                color:white;
+                font: size 15px;
+                cursor: pointer;
+                border-radius:10px;
+            }
+            #update:hover{
+                background-image:linear-gradient(to right,rgb(10,20,80), rgb(10,20,80));
+            }
+               a{
                     color: #00008b;
                 }
         </style>
@@ -114,6 +127,7 @@ if(isset($_POST['submit'])){
               </nav>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <hr>
                 <ul class="nav navbar-nav navbar-right">
 
                 <li><a href="index.php">Home</a></li>  
@@ -351,15 +365,15 @@ if(isset($_POST['submit'])){
 
                 </div>
 
-                <div class="card-footer bg-info mb-0" >
-                    <input type="submit" name="submit" class="btn btn-primary" value="Cadastrar" class="submit" style="margin-left: 31%; width:35%;">
-                </div>
+                <div class="card-footer bg-info mb-0" >    
+                <br><center><input type="submit" class="btn btn-primary" name="submit" value="enviar" class="submit" style="width:30%;"></center><br>                
+            </div>
 
             </form>
 
         </div>
-        <br>
-        <br>
+        <br><br>
+        
 
 
 <!-- RODAPE -->

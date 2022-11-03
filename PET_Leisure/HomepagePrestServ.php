@@ -117,8 +117,8 @@ $nomePrestServ = $resultado['nome'];
               echo "Nome: ".$nomeDonoPet."<br>";
               echo "E-mail: ".$email."<br>";
               echo "Data do comentário: ".date('d/m/Y H:i:s', strtotime($user_data['timestamp']))."<br>";
-              echo "Comentário: ".$mensagem."<hr>";
-              echo "</div>"."<br>";
+              echo "<b>Comentário: </b>".$mensagem."<hr>";
+              echo "</div>"."";
               }
               }
             /* echo " <a class='btn btn-primary' href='DetalhesPrestServ.php?id=$row_usuario[id_prest_serv]'>
@@ -155,8 +155,10 @@ $nomePrestServ = $resultado['nome'];
             }
 
             echo "<a href='HomepagePrestServ.php?pagina=$quantidade_pg'>Ultima</a>";
+           
 
             ?>
+            
   
         </div>
         
